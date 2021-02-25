@@ -1,0 +1,17 @@
+ <!--NOW CHANGE TEMPLATES IN ROOT settings-->
+
+   {% extends 'BASE.html' %}
+   {% block content %}
+   <div>
+
+       <h1><i>{{name}}</i> <b>RCB </b> !!!!!!!!!@@@@@@@@@@@@@@@@@!</h1>
+
+       <form action="add"> <!--action name will be displayed in url eg-http://127.0.0.1:8000/add/?num1=&num2=-->
+           ENTER NUMBER 1 <input placeholder="NUM1" name="num1" type="number"><br>
+           ENTER NUMBER 2 <input placeholder="NUM2" name="num2" type="number"><br>
+           <button type="submit">SUBMIT</button>
+       </form>
+   </div>
+
+   {% endblock %}
+
