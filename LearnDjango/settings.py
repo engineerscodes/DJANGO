@@ -118,3 +118,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS=[
+   os.path.join(BASE_DIR,'static')
+]
+
+STATIC_ROOT=os.path.join(BASE_DIR,'Assets') #it will create Assets folder and put all static file there
+#run >python manage.py  collectstatic
+
