@@ -7,8 +7,22 @@
        <h1><i>{{name}}</i> <b>RCB </b> !!!!!!!!!@@@@@@@@@@@@@@@@@!</h1>
 
        <form action="add"> <!--action name will be displayed in url eg-http://127.0.0.1:8000/add/?num1=&num2=-->
-           ENTER NUMBER 1 <input placeholder="NUM1" name="num1" type="number"><br>
-           ENTER NUMBER 2 <input placeholder="NUM2" name="num2" type="number"><br>
+           ENTER NUMBER 1 <input placeholder="NUM1" name="num1" type="number" required><br>
+           ENTER NUMBER 2 <input placeholder="NUM2" name="num2" type="number" required><br>
+           <button type="submit">SUBMIT</button>
+       </form>
+
+        <form action="sub"> <!--action name will be displayed in url eg-http://127.0.0.1:8000/sub/?num1=&num2=-->
+           ENTER NUMBER 1 <input placeholder="NUM1" name="num1" type="number" required><br>
+           ENTER NUMBER 2 <input placeholder="NUM2" name="num2" type="number" required><br>
+           <button type="submit">SUBMIT</button>
+       </form>
+        <h1>POST METHOD </h1>
+
+        <form action="LOGIN" method="post"> <!--action name will be displayed in url eg-http://127.0.0.1:8000/LOGIN-->
+            {% csrf_token %} <!--THIS IS NEED TO USE POST METHOD!!!!!!!!!-->
+           ENTER NUMBER 1 <input placeholder="NUM1" name="num1" type="number" required><br>
+           ENTER NUMBER 2 <input placeholder="NUM2" name="num2" type="number" required><br>
            <button type="submit">SUBMIT</button>
        </form>
    </div>

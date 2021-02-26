@@ -14,7 +14,38 @@ def LEAN(request) :
 
 def add (request):
 
-    num1=int(request.GET["num1"])
-    num2=int(request.GET["num2"])
-    res=num1+num2
-    return render(request,'ADD.html',{'res':res})
+    num1=request.GET["num1"]
+    num2=request.GET["num2"]
+    if  num1 is not '' and num2 is not '':
+     try :
+       res=int (num1)+int(num2)
+       return render(request,'ADD.html',{'res':res})
+     except ValueError:
+        return HttpResponse("<h1>plz enter Valid Number!!!!!!!!!</h1>")
+    else:
+        return HttpResponse("<h1>plz enter Number</h1>")
+def sub(request):
+    num1 = request.GET["num1"]
+    num2 = request.GET["num2"]
+    if num1 is not '' and num2 is not '':
+       try :
+        res =int( num1) -int (num2)
+        return render(request,'Sub.html',{'RES':res})
+       except ValueError:
+           return  HttpResponse("<h1>Invalid Input</h1>")
+
+    else :
+        return HttpResponse("<h1>plz enter Number</h1>")
+
+def LOGIN(request) :
+
+    num1=request.POST["num1"]
+    num2=request.POST["num2"]
+    if  num1 is not '' and num2 is not '':
+     try :
+       res=int (num1)+int(num2)
+       return render(request,'ADD.html',{'res':res})
+     except ValueError:
+        return HttpResponse("<h1>plz enter Valid Number!!!!!!!!!</h1>")
+    else:
+        return HttpResponse("<h1>plz enter Number</h1>")
