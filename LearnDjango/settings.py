@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'Travello'
 ]
 
 MIDDLEWARE = [
@@ -125,3 +126,8 @@ STATICFILES_DIRS=[
 STATIC_ROOT=os.path.join(BASE_DIR,'Assets') #it will create Assets folder and put all static file there
 #run >python manage.py  collectstatic
 
+#for getting images and storing
+
+MEDIA_URL='/media/'
+
+MEDIA_ROOT=os.path.join(BASE_DIR,'media')
