@@ -30,3 +30,26 @@ def register(request) :
     if request.method =='GET' :
 
        return  render(request,'reg.html')
+
+
+def Login(request) :
+
+    if request.method=='GET' :
+       return render(request,'Login.html')
+    if request.method =='POST':
+        username=request.POST['user_name']
+        password=request.POST['password_cnf']
+
+        user=auth.authenticate(username=username,password=password)
+        print(user," !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+        if user is not None:
+            auth.login(request,user)
+            return redirect('/travell')
+        else :
+            messages.info(request,"USERN NOT EXISTING")
+            return redirect('/accounts/login')
+
+
+def Logout(request) :
+    auth.logout(request)
+    return redirect('/accounts/login')

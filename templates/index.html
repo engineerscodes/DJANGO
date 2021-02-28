@@ -34,8 +34,17 @@
 								<nav class="main_nav">
 									<ul class="d-flex flex-row align-items-start justify-content-start">
 										<li class="active"><a href="/travell">Home</a></li>
-										<li><a href="#">LOGIN</a></li>
+										{% if user.is_authenticated %}
+
+										<li>HI {{user.first_name}}</li>
+										<li><a href="accounts/logout">LOGOUT</a></li>
+
+										{% else %}
+
+										<li><a href="accounts/login">LOGIN</a></li>
 										<li><a href="accounts/register">REGISTRATIONS</a></li>
+                                       {%endif%}
+
 									</ul>
 								</nav>
 								<div class="header_phone ml-auto">Call us: 00-56 445 678 33</div>

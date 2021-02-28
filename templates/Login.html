@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LOGIN</title>
+</head>
+<body>
+
+
+
+    <h1>!!!!!!!!!!!!!!EMMA WASTON RIP!!!!!!!!!!!!!!!</h1>
+ <form method="post" style=" display :block; margin :auto ; ">
+     {% csrf_token %}
+     <input type="text" name="user_name" placeholder="USERNAME" required><br>
+     <input type="password" name="password_cnf" placeholder="Conifrm Password" required><br>
+
+     <button type="submit">SUBMIT</button>
+
+     <div>
+         {% for mess in messages %}
+          <h1>{{mess}}</h1>
+         {% endfor %}
+     </div>
+ </form>
+
+
+
+
+
+
+</body>
+</html>
